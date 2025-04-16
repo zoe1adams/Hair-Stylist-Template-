@@ -1,1 +1,0 @@
-# Hair-Stylist-Template-
