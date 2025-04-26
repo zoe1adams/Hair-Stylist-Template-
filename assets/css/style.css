@@ -35,6 +35,8 @@ body {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .navbar a {
@@ -66,6 +68,7 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Buttons */
 .btn-primary,
 .btn-secondary {
   display: inline-block;
@@ -119,6 +122,7 @@ body {
   margin: 2rem auto;
   padding: 0 1rem;
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -128,6 +132,11 @@ body {
   border: 1px solid #eee;
   border-radius: 12px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.service:hover {
+  transform: translateY(-5px);
 }
 
 .service h3 {
@@ -226,12 +235,16 @@ body {
   margin-top: 3rem;
 }
 
-/* Responsive */
+/* Responsive Enhancements */
 @media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .navbar ul {
     flex-direction: column;
     gap: 1rem;
-    align-items: center;
     margin-top: 1rem;
   }
 
@@ -239,7 +252,37 @@ body {
     font-size: 2rem;
   }
 
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .page-intro h1 {
+    font-size: 2rem;
+  }
+
+  .page-intro p {
+    font-size: 1rem;
+  }
+
   .service-list {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hours-table table,
+  .contact-details,
+  .contact-form-section {
+    font-size: 0.95rem;
   }
 }
